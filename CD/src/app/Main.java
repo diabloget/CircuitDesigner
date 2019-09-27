@@ -21,121 +21,76 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws FileNotFoundException {
 
+        Buttons VButton1 = new Buttons();
+        Buttons VButton2 = new Buttons();
+        Buttons VButton3 = new Buttons();
+        Buttons VButton4 = new Buttons();
+        Buttons VButton5 = new Buttons();
+        Buttons VButton6 = new Buttons();
+        Buttons VButton7 = new Buttons();
+        Buttons HButton1 = new Buttons();
+        Buttons HButton2 = new Buttons();
+        Buttons HButton3 = new Buttons();
+        Buttons HButton4 = new Buttons();
+        Buttons HButton5 = new Buttons();
+        Buttons HButton6 = new Buttons();
+
+        Icon IconAND = new Icon();
+        IconAND.setImageView(IconAND,IconEnum.AND);
+        Icon IconNAND = new Icon();
+        IconNAND.setImageView(IconNAND,IconEnum.NAND);
+        Icon IconNOR = new Icon();
+        IconNOR.setImageView(IconNOR,IconEnum.NOR);
+        Icon IconNOT = new Icon();
+        IconNOT.setImageView(IconNOT,IconEnum.NOT);
+        Icon IconOR = new Icon();
+        IconOR.setImageView(IconOR,IconEnum.OR);
+        Icon IconXNOR = new Icon();
+        IconXNOR.setImageView(IconXNOR,IconEnum.XNOR);
+        Icon IconXOR = new Icon();
+        IconXOR.setImageView(IconXOR,IconEnum.XOR);
+        Icon IconSETTINGS = new Icon();
+        IconSETTINGS.setImageView(IconSETTINGS,IconEnum.SETTINGS);
+        Icon IconRESTART = new Icon();
+        IconRESTART.setImageView(IconRESTART,IconEnum.RESTART);
+        Icon IconOPEN = new Icon();
+        IconOPEN.setImageView(IconOPEN,IconEnum.OPEN);
+        Icon IconSAVE = new Icon();
+        IconSAVE.setImageView(IconSAVE,IconEnum.SAVE);
+        Icon IconRUN = new Icon();
+        IconRUN.setImageView(IconRUN,IconEnum.RUN);
+        Icon IconHELP = new Icon();
+        IconHELP.setImageView(IconHELP,IconEnum.HELP);
+
+        VButton1.setButton(VButton1,ButtonEnum.VButton1);
+        VButton2.setButton(VButton2,ButtonEnum.VButton2);
+        VButton3.setButton(VButton3,ButtonEnum.VButton3);
+        VButton4.setButton(VButton4,ButtonEnum.VButton4);
+        VButton5.setButton(VButton5,ButtonEnum.VButton5);
+        VButton6.setButton(VButton6,ButtonEnum.VButton6);
+        VButton7.setButton(VButton7,ButtonEnum.VButton7);
+        HButton1.setButton(HButton1,ButtonEnum.HButton1);
+        HButton2.setButton(HButton2,ButtonEnum.HButton2);
+        HButton3.setButton(HButton3,ButtonEnum.HButton3);
+        HButton4.setButton(HButton4,ButtonEnum.HButton4);
+        HButton5.setButton(HButton5,ButtonEnum.HButton5);
+        HButton6.setButton(HButton6,ButtonEnum.HButton6);
+
+
+        //Toolbars
+        ToolBar toolBarV = new ToolBar();
+        toolBarV.getItems().addAll(VButton1.getButton(),VButton2.getButton(),VButton3.getButton(),VButton4.getButton(),VButton5.getButton(),VButton6.getButton(),VButton7.getButton());
+        ToolBar toolBarH = new ToolBar();
+        toolBarH.getItems().addAll(HButton1.getButton(),HButton2.getButton(),HButton3.getButton(),HButton4.getButton(),HButton5.getButton(),HButton6.getButton());
         primaryStage.setTitle("Circuit Designer");
 
-        // Código de la ToolBar Vertical + botones
-        ToolBar toolBarV = new ToolBar();
-        toolBarV.setOrientation(Orientation.VERTICAL);
-
-        FileInputStream FIAND = new FileInputStream("C:\\Users\\diabl\\IdeaProjects\\CD\\src\\gatesIcon\\And.jpg");
-        Image AND = new Image(FIAND);
-        ImageView IVAND = new ImageView(AND);
-        Button Vbutton1 = new Button("", IVAND);
-        toolBarV.getItems().add(Vbutton1);
-
-        toolBarV.getItems().add(new Separator());
-
-        FileInputStream FINAND = new FileInputStream("C:\\Users\\diabl\\IdeaProjects\\CD\\src\\gatesIcon\\Nand.jpg");
-        Image NAND = new Image(FINAND);
-        ImageView IVNAND = new ImageView(NAND);
-        Button Vbutton2 = new Button("", IVNAND);
-        toolBarV.getItems().add(Vbutton2);
-
-        toolBarV.getItems().add(new Separator());
-
-        FileInputStream FINOR = new FileInputStream("C:\\Users\\diabl\\IdeaProjects\\CD\\src\\gatesIcon\\Nor.jpg");
-        Image NOR = new Image(FINOR);
-        ImageView IVNOR = new ImageView(NOR);
-        Button Vbutton3 = new Button("", IVNOR);
-        toolBarV.getItems().add(Vbutton3);
-
-        toolBarV.getItems().add(new Separator());
-
-        FileInputStream FINOT = new FileInputStream("C:\\Users\\diabl\\IdeaProjects\\CD\\src\\gatesIcon\\Not.jpg");
-        Image NOT = new Image(FINOT);
-        ImageView IVNOT = new ImageView(NOT);
-        Button Vbutton4 = new Button("", IVNOT);
-        toolBarV.getItems().add(Vbutton4);
-
-        toolBarV.getItems().add(new Separator());
-
-        FileInputStream FIOR = new FileInputStream("C:\\Users\\diabl\\IdeaProjects\\CD\\src\\gatesIcon\\Or.jpg");
-        Image OR = new Image(FIOR);
-        ImageView IVOR = new ImageView(OR);
-        Button Vbutton5 = new Button("", IVOR);
-        toolBarV.getItems().add(Vbutton5);
-
-        toolBarV.getItems().add(new Separator());
-
-        FileInputStream FIXNOR = new FileInputStream("C:\\Users\\diabl\\IdeaProjects\\CD\\src\\gatesIcon\\Xnor.jpg");
-        Image XNOR = new Image(FIXNOR);
-        ImageView IVXNOR = new ImageView(XNOR);
-        Button Vbutton6 = new Button("", IVXNOR);
-        toolBarV.getItems().add(Vbutton6);
-
-        toolBarV.getItems().add(new Separator());
-
-        FileInputStream FIXOR = new FileInputStream("C:\\Users\\diabl\\IdeaProjects\\CD\\src\\gatesIcon\\Xor.jpg");
-        Image XOR = new Image(FIXOR);
-        ImageView IVXOR = new ImageView(XOR);
-        Button Vbutton7 = new Button("", IVXOR);
-        toolBarV.getItems().add(Vbutton7);
-
-        // Código de la ToolBar Horizontal + botones
-        ToolBar toolBarH = new ToolBar();
-
-        FileInputStream FISETTINGS = new FileInputStream("C:\\Users\\diabl\\IdeaProjects\\CD\\src\\gIconS\\Settings.png");
-        Image SETTINGS = new Image(FISETTINGS);
-        ImageView IVSETTINGS = new ImageView(SETTINGS);
-        Button Hbutton1 = new Button("", IVSETTINGS);
-        toolBarH.getItems().add(Hbutton1);
-
-        toolBarH.getItems().add(new Separator());
-
-        FileInputStream FIRESTART = new FileInputStream("C:\\Users\\diabl\\IdeaProjects\\CD\\src\\gIconS\\Restart.png");
-        Image RESTART = new Image(FIRESTART);
-        ImageView IVRESTART = new ImageView(RESTART);
-        Button Hbutton2 = new Button("", IVRESTART);
-        toolBarH.getItems().add(Hbutton2);
-
-        toolBarH.getItems().add(new Separator());
-
-        FileInputStream FIOPEN = new FileInputStream("C:\\Users\\diabl\\IdeaProjects\\CD\\src\\gIconS\\Open.png");
-        Image OPEN = new Image(FIOPEN);
-        ImageView IVOPEN = new ImageView(OPEN);
-        Button Hbutton3 = new Button("", IVOPEN);
-        toolBarH.getItems().add(Hbutton3);
-
-        toolBarH.getItems().add(new Separator());
-
-        FileInputStream FISAVE = new FileInputStream("C:\\Users\\diabl\\IdeaProjects\\CD\\src\\gIconS\\Save.png");
-        Image SAVE = new Image(FISAVE);
-        ImageView IVSAVE = new ImageView(SAVE);
-        Button Hbutton4 = new Button("", IVSAVE);
-        toolBarH.getItems().add(Hbutton4);
-
-        toolBarH.getItems().add(new Separator());
-
-        FileInputStream FIRUN = new FileInputStream("C:\\Users\\diabl\\IdeaProjects\\CD\\src\\gIconS\\Run.png");
-        Image RUN = new Image(FIRUN);
-        ImageView IVRUN = new ImageView(RUN);
-        Button Hbutton5 = new Button("", IVRUN);
-        toolBarH.getItems().add(Hbutton5);
-
-        toolBarH.getItems().add(new Separator());
-
-        FileInputStream FIHELP = new FileInputStream("C:\\Users\\diabl\\IdeaProjects\\CD\\src\\gIconS\\Help.png");
-        Image HELP = new Image(FIHELP);
-        ImageView IVHELP = new ImageView(HELP);
-        Button Hbutton6 = new Button("", IVHELP);
-        toolBarH.getItems().add(Hbutton6);
-
         // Separación de los paneles
+
         BorderPane Pane = new BorderPane();
         Pane.setTop(toolBarH);
-        Pane.setLeft(toolBarV);
+        Pane.setBottom(toolBarV);
 
-        Scene scene = new Scene(Pane, 960, 600);
+        Scene scene = new Scene(Pane, 988, 710);
         primaryStage.setScene(scene);
         primaryStage.show();
     }
