@@ -9,9 +9,12 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 
 public class Buttons {
     private Button button;
+    private Stage FCstage;
 
     public Button getButton() {
         return button;
@@ -100,10 +103,27 @@ public class Buttons {
             Icon IconOPEN = new Icon();
             IconOPEN.setImageView(IconOPEN,IconEnum.OPEN);
             buttonGeneric.setGraphic(IconOPEN.getImageView());
+            buttonGeneric.setOnAction(new EventHandler<ActionEvent>(){
+                @Override
+                public void handle(ActionEvent event) {
+                    FileChooser fileChooser = new FileChooser();
+                    fileChooser.setTitle("Choose a Logical Gates Diagram to open");
+                    fileChooser.showOpenDialog(FCstage);
+                }
+            });
+
         }else if(Type == ButtonEnum.HButton4){
             Icon IconSAVE = new Icon();
             IconSAVE.setImageView(IconSAVE,IconEnum.SAVE);
             buttonGeneric.setGraphic(IconSAVE.getImageView());
+            buttonGeneric.setOnAction(new EventHandler<ActionEvent>(){
+                @Override
+                public void handle(ActionEvent event) {
+                    FileChooser fileChooser = new FileChooser();
+                    fileChooser.setTitle("Choose where you want to save your Logical Gates Diagram");
+                    fileChooser.showOpenDialog(FCstage);
+                }
+            });
         }else if(Type == ButtonEnum.HButton5){
             Icon IconRUN = new Icon();
             IconRUN.setImageView(IconRUN,IconEnum.RUN);
