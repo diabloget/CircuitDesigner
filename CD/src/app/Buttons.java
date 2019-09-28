@@ -1,11 +1,15 @@
 package app;
 
 import java.io.FileNotFoundException;
+
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.scene.control.Button;
-/* import javafx.event.ActionEvent;
+import javafx.scene.input.MouseEvent;
+import javafx.event.ActionEvent;
 import javafx.scene.input.DragEvent;
 import javafx.scene.input.MouseEvent;
-import javafx.event.EventHandler; */
+import javafx.event.EventHandler;
 
 public class Buttons {
     private Button button;
@@ -20,30 +24,65 @@ public class Buttons {
             Icon IconAND = new Icon();
             IconAND.setImageView(IconAND,IconEnum.AND);
             buttonGeneric.setGraphic(IconAND.getImageView());
+            buttonGeneric.setOnDragDetected(new EventHandler<MouseEvent>() {
+                @Override
+                public void handle(MouseEvent event) {
+                    Bevents.DragDetected(event,IconAND.getImageView(),"AND");
+                }});
         }else if(Type == ButtonEnum.VButton2){
             Icon IconNAND = new Icon();
             IconNAND.setImageView(IconNAND,IconEnum.NAND);
             buttonGeneric.setGraphic(IconNAND.getImageView());
+            buttonGeneric.setOnDragDetected(new EventHandler<MouseEvent>() {
+                @Override
+                public void handle(MouseEvent event) {
+                    Bevents.DragDetected(event,IconNAND.getImageView(),"NAND");
+                }});
         }else if(Type == ButtonEnum.VButton3){
             Icon IconNOR = new Icon();
             IconNOR.setImageView(IconNOR,IconEnum.NOR);
             buttonGeneric.setGraphic(IconNOR.getImageView());
+            buttonGeneric.setOnDragDetected(new EventHandler<MouseEvent>() {
+                @Override
+                public void handle(MouseEvent event) {
+                    Bevents.DragDetected(event,IconNOR.getImageView(),"NOR");
+                }});
         }else if(Type == ButtonEnum.VButton4){
             Icon IconNOT = new Icon();
             IconNOT.setImageView(IconNOT,IconEnum.NOT);
             buttonGeneric.setGraphic(IconNOT.getImageView());
+            buttonGeneric.setOnDragDetected(new EventHandler<MouseEvent>() {
+                @Override
+                public void handle(MouseEvent event) {
+                    Bevents.DragDetected(event,IconNOT.getImageView(),"NOT");
+                }});
         }else if(Type == ButtonEnum.VButton5){
             Icon IconOR = new Icon();
             IconOR.setImageView(IconOR,IconEnum.OR);
             buttonGeneric.setGraphic(IconOR.getImageView());
+            buttonGeneric.setOnDragDetected(new EventHandler<MouseEvent>() {
+                @Override
+                public void handle(MouseEvent event) {
+                    Bevents.DragDetected(event,IconOR.getImageView(),"OR");
+                }});
         }else if(Type == ButtonEnum.VButton6){
             Icon IconXNOR = new Icon();
             IconXNOR.setImageView(IconXNOR,IconEnum.XNOR);
             buttonGeneric.setGraphic(IconXNOR.getImageView());
+            buttonGeneric.setOnDragDetected(new EventHandler<MouseEvent>() {
+                @Override
+                public void handle(MouseEvent event) {
+                    Bevents.DragDetected(event,IconXNOR.getImageView(),"XNOR");
+                }});
         }else if(Type == ButtonEnum.VButton7){
             Icon IconXOR = new Icon();
             IconXOR.setImageView(IconXOR,IconEnum.XOR);
             buttonGeneric.setGraphic(IconXOR.getImageView());
+            buttonGeneric.setOnDragDetected(new EventHandler<MouseEvent>() {
+                @Override
+                public void handle(MouseEvent event) {
+                    Bevents.DragDetected(event,IconXOR.getImageView(),"XOR");
+                }});
         }else if(Type == ButtonEnum.HButton1){
             Icon IconSETTINGS = new Icon();
             IconSETTINGS.setImageView(IconSETTINGS,IconEnum.SETTINGS);
@@ -52,6 +91,12 @@ public class Buttons {
             Icon IconRESTART = new Icon();
             IconRESTART.setImageView(IconRESTART,IconEnum.RESTART);
             buttonGeneric.setGraphic(IconRESTART.getImageView());
+            buttonGeneric.setOnAction(new EventHandler<ActionEvent>(){
+                @Override
+                public void handle(ActionEvent event) {
+                    Main.Group.getChildren().clear();
+                }
+            });
         }else if(Type == ButtonEnum.HButton3){
             Icon IconOPEN = new Icon();
             IconOPEN.setImageView(IconOPEN,IconEnum.OPEN);

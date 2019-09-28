@@ -1,14 +1,19 @@
 package app;
 
 import javafx.application.Application;
+import javafx.event.EventHandler;
 import javafx.geometry.Orientation;
+import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Separator;
 import javafx.scene.control.ToolBar;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.DragEvent;
+import javafx.scene.input.TransferMode;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -17,6 +22,11 @@ public class Main extends Application {
     public static void main(String[] args) {
         launch(args);
     }
+
+    //Panel central.
+
+    public static final Group Group = new Group();
+    public static final Pane field = new Pane(Group);
 
     @Override
     public void start(Stage primaryStage) throws FileNotFoundException {
@@ -82,13 +92,24 @@ public class Main extends Application {
         toolBarV.getItems().addAll(VButton1.getButton(),VButton2.getButton(),VButton3.getButton(),VButton4.getButton(),VButton5.getButton(),VButton6.getButton(),VButton7.getButton());
         ToolBar toolBarH = new ToolBar();
         toolBarH.getItems().addAll(HButton1.getButton(),HButton2.getButton(),HButton3.getButton(),HButton4.getButton(),HButton5.getButton(),HButton6.getButton());
+        toolBarH.setStyle("-fx-background-color: #2C3539");
+        toolBarH.setOrientation(Orientation.VERTICAL);
         primaryStage.setTitle("Circuit Designer");
+
+        // Evento para recibir en el field (pane)
+        field.setOnDragOver(new EventHandler<DragEvent>() {
+            @Override
+            public void handle(DragEvent Bevent) {
+                Bevent.acceptTransferModes(TransferMode.COPY_OR_MOVE); }
+        });
+
 
         // Separación de los paneles
 
         BorderPane Pane = new BorderPane();
-        Pane.setTop(toolBarH);
+        Pane.setLeft(toolBarH);
         Pane.setBottom(toolBarV);
+        Pane.setCenter(field);
 
         Scene scene = new Scene(Pane, 988, 710);
         primaryStage.setScene(scene);
