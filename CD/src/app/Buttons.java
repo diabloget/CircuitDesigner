@@ -1,15 +1,14 @@
 package app;
 
+import java.awt.*;
 import java.io.FileNotFoundException;
-
+import java.io.IOException;
+import java.net.URISyntaxException;
+import java.net.URL;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
-import javafx.event.ActionEvent;
-import javafx.scene.input.DragEvent;
-import javafx.scene.input.MouseEvent;
-import javafx.event.EventHandler;
 
 public class Buttons {
     private Button button;
@@ -113,6 +112,19 @@ public class Buttons {
             Icon IconHELP = new Icon();
             IconHELP.setImageView(IconHELP,IconEnum.HELP);
             buttonGeneric.setGraphic(IconHELP.getImageView());
+            buttonGeneric.setOnAction(new EventHandler<ActionEvent>(){
+                @Override
+                public void handle(ActionEvent event) {
+                    try {
+                        Desktop.getDesktop().browse(new URL("https://github.com/diabloget/CircuitDesigner").toURI());
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    } catch (URISyntaxException e) {
+                        e.printStackTrace();
+                    }
+
+                }
+            });
         }else {
             buttonGeneric.setText("Fuck");
         }

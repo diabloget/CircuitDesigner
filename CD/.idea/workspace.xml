@@ -25,7 +25,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="C:/Program Files/Git/git-cmd.exe" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -98,6 +98,7 @@
       <workItem from="1569369139116" duration="4134000" />
       <workItem from="1569549594694" duration="6768000" />
       <workItem from="1569558064335" duration="6859000" />
+      <workItem from="1569650004408" duration="2000000" />
     </task>
     <servers />
   </component>
