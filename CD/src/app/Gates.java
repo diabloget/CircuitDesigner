@@ -130,7 +130,7 @@ public class Gates {
 
         }
     }
-    class GateXOR implements Logics{
+    static class GateXOR implements Logics{
         private int In1;
         private int In2;
         private int Out;
@@ -170,7 +170,7 @@ public class Gates {
 
         }
     }
-    class GateXNOR implements Logics{
+    static class GateXNOR implements Logics{
         private int In1;
         private int In2;
         private int Out;
@@ -210,7 +210,7 @@ public class Gates {
 
         }
     }
-    class GateNAND implements Logics{
+    static class GateNAND implements Logics{
         private int In1;
         private int In2;
         private int Out;
@@ -256,7 +256,7 @@ public class Gates {
 
         }
     }
-    class GateNOR implements Logics{
+    static class GateNOR implements Logics{
         private int In1;
         private int In2;
         private int Out;

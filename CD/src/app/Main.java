@@ -1,21 +1,14 @@
 package app;
 
 import javafx.application.Application;
-import javafx.event.EventHandler;
 import javafx.geometry.Orientation;
 import javafx.scene.Group;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Separator;
 import javafx.scene.control.ToolBar;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import javafx.scene.input.DragEvent;
 import javafx.scene.input.TransferMode;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
 public class Main extends Application {
@@ -97,11 +90,7 @@ public class Main extends Application {
         primaryStage.setTitle("Circuit Designer");
 
         // Evento para recibir en el field (pane)
-        field.setOnDragOver(new EventHandler<DragEvent>() {
-            @Override
-            public void handle(DragEvent Bevent) {
-                Bevent.acceptTransferModes(TransferMode.COPY_OR_MOVE); }
-        });
+        field.setOnDragOver(Bevent -> Bevent.acceptTransferModes(TransferMode.COPY_OR_MOVE));
 
 
         // Separación de los paneles
