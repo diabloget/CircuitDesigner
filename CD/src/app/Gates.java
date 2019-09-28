@@ -3,6 +3,22 @@ package app;
 public class Gates {
 
     Gates Gate;
+    private String In1 = "";
+
+    public Gates() {
+    }
+
+    public String getIn1() {
+        return In1;
+    }
+
+    public void setIn1(String In) {
+        In1 = In;
+    }
+
+    public Gates(String EntradaUno) {
+        this.In1 = EntradaUno;
+    }
 
     interface Logics extends Gate{
 
@@ -88,7 +104,7 @@ public class Gates {
 
         }
     }
-    class GateNOT implements Logics{
+    static class GateNOT implements Logics{
         private int In1;
         private int In2;
         private int Out;
